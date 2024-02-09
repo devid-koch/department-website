@@ -71,83 +71,73 @@ const Header = ({
   return (
     <>
       <header
-        class={`w-full h-14 fixed z-50 ${defaultPadding} ${!transparentHeader() ? "lg:flex shadow-md hidden bg-[#17082D] h-20" : "backdrop-filter lg:backdrop-blur-xl bg-opacity-30 mt-20"
-          } transition-colors duration-500 normalText`}>
+        class={ `w-full h-14 fixed z-50 ${defaultPadding} ${!transparentHeader() ? "lg:flex shadow-md hidden bg-[#17082D] h-20" : "backdrop-filter lg:backdrop-blur-xl bg-opacity-30 mt-20"
+          } transition-colors duration-500 normalText` }>
         <div class="w-full h-full flex items-center justify-between">
           <div class="w-full flex">
             <div
-              class={`w-full flex ${webMenuPosition == "right" ? "justify-start lg:justify-center" : "justify-end lg:justify-between "
-                }  items-center space-x-8 font-semibold  ${transparentHeader() ? "text-white" : "text-white"}`}>
+              class={ `w-full flex ${webMenuPosition == "right" ? "justify-start lg:justify-center" : "justify-end lg:justify-between "
+                }  items-center space-x-8 font-semibold  ${transparentHeader() ? "text-white" : "text-white"}` }>
               <div
-                class={`${toggleNav() ? "w-full lg:w-fit h-screen lg:h-full z-50 lg:z-0" : "-z-10 lg:z-0 delay-500 lg:delay-0"
-                  } fixed lg:relative top-0 right-0 bg-[#000000aa] lg:bg-[#00000000]`}>
+                class={ `${toggleNav() ? "w-full lg:w-fit h-screen lg:h-full z-50 lg:z-0" : "-z-10 lg:z-0 delay-500 lg:delay-0"
+                  } fixed lg:relative top-0 right-0 bg-[#000000aa] lg:bg-[#00000000]` }>
                 <div
                   //@ts-ignore
-                  use: clickOutside={() => setToggleNav(false)}
-                  class={`${toggleNav() ? "right-0" : "right-full lg:right-0"
-                    } fixed lg:relative top-0 w-64 lg:w-fit h-screen lg:h-full flex flex-col lg:flex-row lg:items-center p-5 lg:p-0 space-y-5 lg:space-y-0 lg:space-x-5 bg-blue-500 backdrop-blur-0 opacity-80 lg:bg-[#00000000] transition-all duration-500`}>
+                  use:clickOutside={ () => setToggleNav(false) }
+                  class={ `${toggleNav() ? "right-0" : "right-full lg:right-0"
+                    } fixed lg:relative top-0 w-64 lg:w-fit h-screen lg:h-full flex flex-col lg:flex-row lg:items-center p-5 lg:p-0 space-y-5 lg:space-y-0 lg:space-x-5 bg-gray-900 backdrop-blur-0 opacity-80 lg:bg-[#00000000] transition-all duration-500` }>
                   <div class="w-full h-8 flex lg:hidden justify-end mb-7">
                     <div
-                      onClick={() => {
+                      onClick={ () => {
                         setToggleNav(false);
-                      }}>
+                      } }>
                       <IoCloseCircleOutline class="h-8 w-8 text-primary xl:hover:cursor-pointer xl:hover:bg-blue-200 active:bg-blue-200 duration-900 rounded-full" />
                     </div>
                   </div>
                   <a
-                    onClick={() => { handleSmoothScroll("home", 0), linkToPage(navigate, "/") }}
-                    class={`block text-xl lg:text-base capitalize hover:cursor-pointer transition-all duration-300 ${transparentHeader()
+                    onClick={ () => { handleSmoothScroll("home", 0), linkToPage(navigate, "/") } }
+                    class={ `block text-xl lg:text-base capitalize hover:cursor-pointer transition-all duration-300 ${transparentHeader()
                       ? "text-primary lg:text-white hover:text-secondary"
                       : "text-primary hover:text-secondary"
-                      }${toggleNav() ? "active:border-l-4 active:border-primary active:pl-4 " : ""}`}>
+                      }${toggleNav() ? "active:border-l-4 active:border-primary active:pl-4 " : ""}` }>
                     Home
                   </a>
-                  <a
-                    onClick={() => { handleSmoothScroll("about", 1), linkToPage(navigate, "/about-us") }}
-                    class={`block text-xl lg:text-base capitalize hover:cursor-pointer transition-all duration-300 whitespace-nowrap ${transparentHeader()
+                  <div
+                    onClick={ () => { handleSmoothScroll("about", 1), linkToPage(navigate, "/about-us") } }
+                    class={ `block text-xl lg:text-base capitalize hover:cursor-pointer transition-all duration-300 whitespace-nowrap ${transparentHeader()
                       ? "text-primary lg:text-white hover:text-secondary"
                       : "text-primary hover:text-secondary"
-                      }${toggleNav() ? "active:border-l-4 active:border-primary active:pl-4 " : ""}`}>
+                      }${toggleNav() ? "active:border-l-4 active:border-primary active:pl-4 " : ""}` }>
                     About Us
-                  </a>
-                  <a
-                    onClick={() => { handleSmoothScroll("services", 2), linkToPage(navigate, "/courses") }}
-                    class={`block text-xl lg:text-base capitalize hover:cursor-pointer transition-all duration-300 ${transparentHeader()
-                      ? "text-primary lg:text-white hover:text-secondary"
-                      : "text-primary hover:text-secondary"
-                      }${toggleNav() ? "active:border-l-4 active:border-primary active:pl-4 " : ""}`}>
-                    Topics covered
-                  </a>
-                  <div class={`w-24 h-24 ${transparentHeader() && !toggleNav() ? "flex" : "hidden"}`}>
-                    <img class="w-full h-full object-cover overflow-hidden"
-                      src="src/assets/images/logo-HP.png" alt="hiii" />
                   </div>
                   <a
-                    onClick={() => { handleSmoothScroll("pricing", 3), linkToPage(navigate, "/admission") }}
-                    class={`block text-xl lg:text-base capitalize hover:cursor-pointer transition-all duration-300 ${transparentHeader()
+                    onClick={ () => { handleSmoothScroll("pricing", 3), linkToPage(navigate, "/notices") } }
+                    class={ `block text-xl lg:text-base capitalize hover:cursor-pointer transition-all duration-300 ${transparentHeader()
                       ? "text-primary lg:text-white hover:text-secondary"
                       : "text-primary hover:text-secondary"
-                      }${toggleNav() ? "active:border-l-4 active:border-primary active:pl-4 " : ""}`}>
-                    Admission
+                      }${toggleNav() ? "active:border-l-4 active:border-primary active:pl-4 " : ""}` }>
+                    Notices
                   </a>
 
                   <a
-                    onClick={() => handleSmoothScroll("article", 4)}
-                    class={`block text-xl lg:text-base capitalize hover:cursor-pointer transition-all duration-300 ${transparentHeader()
+                    onClick={ () => { handleSmoothScroll("article", 4), linkToPage(navigate, "/contact-us") } }
+                    class={ `block text-xl lg:text-base capitalize hover:cursor-pointer transition-all duration-300 ${transparentHeader()
                       ? "text-primary lg:text-white hover:text-secondary"
                       : "text-primary hover:text-secondary"
-                      }${toggleNav() ? "active:border-l-4 active:border-primary active:pl-4 " : ""}`}>
-                    Administration
+                      }${toggleNav() ? "active:border-l-4 active:border-primary active:pl-4 " : ""}` }>
+                    Contact
                   </a>
-
-                  <a
-                    onClick={() => handleSmoothScroll("contact", 5)}
-                    class={`block text-xl lg:text-base capitalize hover:cursor-pointer transition-all duration-300 ${transparentHeader()
-                      ? "text-primary lg:text-white hover:text-secondary"
-                      : "text-primary hover:text-secondary"
-                      }${toggleNav() ? "active:border-l-4 active:border-primary active:pl-4 " : ""}`}>
-                    Student's Body
-                  </a>
+                  <div class="w-full flex justify-end">
+                    <a
+                      onClick={ () => handleSmoothScroll("contact", 5) }
+                      class={ `block text-xl lg:text-base capitalize hover:cursor-pointer transition-all duration-300 ${transparentHeader()
+                        ? "text-primary lg:text-white hover:text-secondary"
+                        : "text-primary hover:text-secondary"
+                        }${toggleNav() ? "active:border-l-4 active:border-primary active:pl-4 " : ""}` }
+                      href="https://school-management-system-virid.vercel.app/">
+                      Login
+                    </a>
+                  </div>
                   {/* <a
                     onClick={() => handleSmoothScroll("contact", 5)}
                     class={`block text-xl lg:text-base capitalize hover:cursor-pointer transition-all duration-300 ${transparentHeader()
@@ -176,28 +166,28 @@ const Header = ({
               </div>
 
               <div class="flex items-center space-x-3">
-                {showNotificationIcon ? (
+                { showNotificationIcon ? (
                   <div class="w-14 h-14 flex items-center justify-center">
                     <FaSolidBell class="w-9 h-9 fill-white" />
                   </div>
-                ) : null}
-                {showMenu ? (
+                ) : null }
+                { showMenu ? (
                   <div
-                    onClick={() => setToggleNav(!toggleNav())}
+                    onClick={ () => setToggleNav(!toggleNav()) }
                     class="w-14 h-14 flex lg:hidden items-center justify-center rounded-md active:bg-[#ffffff77] active:scale-95 transition-transform duration-300">
                     <FiMenu class="w-9 h-9 fill-white" />
                   </div>
-                ) : null}
+                ) : null }
 
-                {showAvatar ? (
+                { showAvatar ? (
                   <div class="w-14 h-14 hidden lg:flex items-center justify-center overflow-hidden border rounded-full">
-                    <img src={heroImg} class="w-full h-full object-cover" />
+                    <img src={ heroImg } class="w-full h-full object-cover" />
                   </div>
                 ) : Logout ? (
                   <div class="w-14 h-14 hidden lg:flex items-center justify-center">
                     <FaSolidPowerOff class="w-9 h-9 fill-white" />
                   </div>
-                ) : null}
+                ) : null }
               </div>
             </div>
           </div>
@@ -242,7 +232,7 @@ const Header = ({
         </div>
       </div> */}
 
-      {/* <FloatingMenu toggle={scroll()} handleSmoothScroll={handleSmoothScroll} /> */}
+      {/* <FloatingMenu toggle={scroll()} handleSmoothScroll={handleSmoothScroll} /> */ }
     </>
   );
 };

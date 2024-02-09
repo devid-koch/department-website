@@ -3,14 +3,14 @@ import { defaultPadding } from "config/styles";
 
 const Contact4 = () => {
   return (
-    <section class={`bg-white ${defaultPadding}`}>
+    <section class={ `bg-white ${defaultPadding}` }>
       <div class="px-6 py-12">
         <div class="flex flex-col justify-center items-center">
           <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl ">Get in touch</h1>
           <p class="mt-3 text-gray-500 ">Our friendly team would love to hear from you.</p>
         </div>
 
-        <div class="grid gap-12 mt-10">
+        <div class="grid gap-12 mt-10 font-bold">
           <div class="flex justify-around gap-12">
             <div>
               <span class="inline-block p-3 text-secondary rounded-full bg-primary">
@@ -56,7 +56,7 @@ const Contact4 = () => {
 
               <h2 class="mt-4 text-base font-medium text-gray-800 ">College Address</h2>
               <p class="mt-2 text-sm text-gray-500 ">Come and join us</p>
-              <p class="mt-2 text-sm text-primary ">{_ADDRESS}</p>
+              <p class="mt-2 text-sm text-primary ">{ _ADDRESS }</p>
             </div>
 
             <div>
@@ -78,8 +78,8 @@ const Contact4 = () => {
               </span>
 
               <h2 class="mt-4 text-base font-medium text-gray-800 ">Phone</h2>
-              <p class="mt-2 text-sm text-gray-500 ">Mon-Fri from 8am to 5pm.</p>
-              <p class="mt-2 text-sm text-primary ">{_PHONE_NO}</p>
+              <p class="mt-2 text-sm text-gray-500 ">Mon-Fri from 8am to 4pm.</p>
+              <p class="mt-2 text-sm text-primary ">{ _PHONE_NO }</p>
             </div>
           </div>
 
@@ -92,12 +92,12 @@ const Contact4 = () => {
               // marginHeight="0"
               // marginWidth="0"
               // scrolling="no"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3572.604244374075!2d91.439174!3d26.436245!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375bcc9f50171907%3A0x6314ca3648373e9b!2sNalbari%20Law%20College!5e0!3m2!1sen!2sin!4v1699367983513!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14253.24892757494!2d93.1436897!3d26.7344106!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37445e4920f808cb%3A0xd5b749b84e8ae3d5!2sBiswanath%20College!5e0!3m2!1sen!2sin!4v1707497508859!5m2!1sen!2sin"
             ></iframe>
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

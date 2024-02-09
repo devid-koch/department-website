@@ -28,22 +28,25 @@ import Header from "widgets/layout/header/header-7";
 import HeroWithHeader from "./hero-with-header";
 import ToTheJourney from "./to-the-jouney";
 import Features8 from "widgets/layout/content/features/features-8";
+import HeroWithHeader4 from "widgets/layout/hero-with-header/hero-header-4";
+import Contact1 from "widgets/layout/content/contact/contact-1";
 
 const Home = () => {
   return (
     <>
       <Header />
+      {/* <HeroWithHeader4 /> */ }
       <HeroWithHeader />
       <ToTheJourney />
       <Features8 />
-      <Features9 />
+      {/* <Features9 /> */ }
       {/* <PrincipalDesk />
       <About9 />
       <Blog2 />
       <Statistics3 />
       <Team3 />
-      
-      <Footer4 /> */}
+       */}
+      <Footer4 />
     </>
   );
 };

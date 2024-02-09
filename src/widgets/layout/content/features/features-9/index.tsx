@@ -22,13 +22,24 @@ const Features9 = () => {
             throw error;
         }
     }
+    console.log('Data notices:', notices);
 
-    // Example usage:
     const apiUrl = `${_BASE_URL}/NoticeList/65c258b7902f7b5611c1f5a7`;
     fetchNotices(apiUrl)
         .then((result: any) => {
-            console.log('Data received:', result);
             setNotices(result)
+            if (result.length > notices().length) {
+                <div className="toast z-50">
+                    <div className="alert alert-info">
+                        <span>New notice arrived.</span>
+                    </div>
+                </div>
+                alert("new notice")
+                console.log('Data received ------ length', notices().length);
+
+            } else {
+                setNotices(result)
+            }
         })
         .catch((error: any) => {
             console.error('Error:', error);
@@ -56,9 +67,8 @@ const Features9 = () => {
 
 
 
-
     return (
-        <div class={ `bg-white ${defaultPadding}` }>
+        <div class={ `bg-white ${defaultPadding} pt-10` }>
             <div class="text-center pb-10">
                 <h2 class="ChivoFont text-3xl font-black uppercase leading-none tracking-tight text-gray-900 sm:text-4xl">
                     Notification & Updates
@@ -69,14 +79,10 @@ const Features9 = () => {
                 <div class="w-full lg:w-1/2 flex flex-col items-center justify-center">
                     <img src={ notification } class="w-3/4 md:w-3/4 h-3/4" />
                 </div>
-                <div class="w-full lg:w-1/2 flex flex-col gap-4">
+                <div class="w-full lg:w-1/2 grid grid-cols-2 gap-4">
                     { notices()?.map((item: any) => (
                         <Alert details={ item.details } month={ extractMonth(item.date) } date={ extractDate(item.date) } />
                     )) }
-                    {/* <div class="flex flex-col items-end hover:cursor-pointer">
-            <div class="flex text-base text-primary font-semibold">View All</div>
-            <div class="w-14 flex border-2 border-primary rounded-full"></div>
-          </div> */}
                 </div>
             </div>
         </div>
